@@ -1,0 +1,70 @@
+[reg1]
+nome = Tales de Azevedo
+cpf = 1000000000
+datadenascimento = 01/01/1990
+email = tales@gmail.com
+telresidencial = 1234567890
+telcelular = 1234567890
+endrua = Rua XXX
+endbairro = Centro
+endnumero = 1
+endcidade = Aracaju
+endestado = SE
+endcep = XXX
+
+
+[reg2]
+nome = Mike Gabriel de Almeida
+cpf = 1000000001
+datadenascimento = 01/01/1990
+email = mike@gmail.com
+telresidencial = 1234567890
+telcelular = 1234567890
+endrua = Rua XXX
+endbairro = Centro
+endnumero = 1
+endcidade = Aracaju
+endestado = SE
+endcep = XXX
+
+[reg3]
+nome = Raphael Pantaleão
+cpf = 1000000002
+datadenascimento = 01/01/1990
+email = danilo@gmail.com
+telresidencial = 1234567890
+telcelular = 1234567890
+endrua = Rua XXX
+endbairro = Centro
+endnumero = 1
+endcidade = Aracaju
+endestado = SE
+endcep = XXX
+
+[reg4]
+nome = Danilo Oliveira
+cpf = 1000000003
+datadenascimento = 01/01/1990
+email = danilo@gmail.com
+telresidencial = 1234567890
+telcelular = 1234567890
+endrua = Rua XXX
+endbairro = Centro
+endnumero = 1
+endcidade = Aracaju
+endestado = SE
+endcep = XXX
+
+[reg5]
+nome = Arthur Lázaro
+cpf = 1000000004
+datadenascimento = 01/01/1990
+email = tales@gmail.com
+telresidencial = 1234567890
+telcelular = 1234567890
+endrua = Rua XXX
+endbairro = Centro
+endnumero = 1
+endcidade = Aracaju
+endestado = SE
+endcep = XXX
