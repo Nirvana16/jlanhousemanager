@@ -64,12 +64,6 @@ public class EnderecoPanel extends javax.swing.JPanel {
 
         jLabel2.setText("Bairro:");
 
-        txtRua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtRuaActionPerformed(evt);
-            }
-        });
-
         jLabel3.setText("Cidade:");
 
         jLabel4.setText("Estado:");
@@ -162,10 +156,6 @@ public class EnderecoPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRuaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtRuaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

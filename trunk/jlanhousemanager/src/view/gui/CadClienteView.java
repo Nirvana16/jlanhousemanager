@@ -195,7 +195,7 @@ public class CadClienteView extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void gravar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gravar
-        // TODO add your handling code here:
+
         String nome = txtNome.getName();
         String cpf = txtCPF.getText();
         String telRes = txtTelRes.getText();
