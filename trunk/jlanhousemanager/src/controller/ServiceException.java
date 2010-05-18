@@ -9,6 +9,4 @@ package controller;
  *
  * @author Danilo
  */
-class ServiceException extends Exception {
-
-}
+public class ServiceException extends Exception {}
