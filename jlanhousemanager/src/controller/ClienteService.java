@@ -13,23 +13,18 @@ import model.Cliente;
  *
  * @author Danilo
  */
-public class ClienteService extends Service{
+class ClienteService {
 
     private EntityManager em;
 
-    public ClienteService(){
-    }
-
-    public ClienteService( EntityManager em ) {
+    ClienteService( EntityManager em ) {
         this.em = em;
     }
 
     public void addClient(Cliente c) {
-
         em.getTransaction().begin();
         em.persist(c);
         em.getTransaction().commit();
-
     }
 
     public Cliente findClient(int id) {
@@ -37,11 +32,8 @@ public class ClienteService extends Service{
     }
 
     public List<Cliente> getClients(){  
-
         TypedQuery<Cliente> tp = em.createQuery("SELECT c FROM Cliente c", Cliente.class);
-
         return tp.getResultList();
-        
     }
     
 }

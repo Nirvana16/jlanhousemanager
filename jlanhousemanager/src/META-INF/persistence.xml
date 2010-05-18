@@ -8,9 +8,8 @@
     <class>model.Funcionario</class>
     <class>model.Produto</class>
     <class>model.Fornecedor</class>
-    <class>model.Tipodespesa</class>
-    <class>model.Despesafixa</class>
     <class>model.Aquisicao</class>
+    <class>model.TipoDespesa</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/dblanhouse"/>
       <property name="javax.persistence.jdbc.password" value="12345"/>

@@ -12,7 +12,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import model.Cliente;
 import model.DespesaVariavel;
-import model.Despesafixa;
+import model.DespesaFixa;
 
 /**
  *

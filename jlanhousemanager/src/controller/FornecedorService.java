@@ -6,22 +6,23 @@
 package controller;
 
 import javax.persistence.EntityManager;
-import model.Funcionario;
+import model.Fornecedor;
 
 /**
  *
- * @author Danilo
+ * @author Tales
  */
-class FuncionarioService {
-
+class FornecedorService {
+    
     private EntityManager em;
 
-    FuncionarioService(EntityManager em) {
+    FornecedorService(EntityManager em) {
         this.em = em;
     }
-    public void addFuncionario(Funcionario func){
+
+    void addFornecedor(Fornecedor fornecedor) {
         em.getTransaction().begin();
-        em.persist(func);
+        em.persist(fornecedor);
         em.getTransaction().commit();
     }
 

@@ -6,23 +6,28 @@
 package controller;
 
 import javax.persistence.EntityManager;
-import model.Funcionario;
+import model.TipoDespesa;
 
 /**
  *
- * @author Danilo
+ * @author Tales
  */
-class FuncionarioService {
+class TipoDespesaService {
 
     private EntityManager em;
 
-    FuncionarioService(EntityManager em) {
+    TipoDespesaService(EntityManager em) {
         this.em = em;
     }
-    public void addFuncionario(Funcionario func){
+
+    void addTipoDespesa(TipoDespesa tipo) {
         em.getTransaction().begin();
-        em.persist(func);
+        em.persist(tipo);
         em.getTransaction().commit();
+    }
+
+    TipoDespesa findTipoDespesa(int id) {
+        return em.find(TipoDespesa.class, id);
     }
 
 }
