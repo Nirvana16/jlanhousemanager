@@ -54,13 +54,13 @@ public class GUIPrincipal extends javax.swing.JFrame {
         miClientes.setText("Clientes");
         jMenu1.add(miClientes);
 
-        miComputadores.setText("jMenuItem1");
+        miComputadores.setText("Computadores");
         jMenu1.add(miComputadores);
 
-        miFornecedores.setText("jMenuItem1");
+        miFornecedores.setText("Fornecedores");
         jMenu1.add(miFornecedores);
 
-        miFuncionario.setText("jMenuItem1");
+        miFuncionario.setText("Funcionários");
         jMenu1.add(miFuncionario);
 
         jMenuBar1.add(jMenu1);
