@@ -11,11 +11,14 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -35,6 +38,8 @@ import javax.persistence.TemporalType;
 public class DespesaFixa implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @SequenceGenerator(name="seqDespesaFixa", allocationSize=1, sequenceName="despesafixa_iddespesafixa_seq")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqDespesaFixa" )
     @Basic(optional = false)
     @Column(name = "iddespesafixa")
     private Integer iddespesafixa;
