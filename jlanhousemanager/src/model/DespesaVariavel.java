@@ -40,7 +40,7 @@ public class DespesaVariavel implements Serializable {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqDespesaVariavel" )
     @Basic(optional = false)
     @Column(name = "iddespesavariavel")
-    private Integer iddespesavariavel;
+    private Integer id;
     @Basic(optional = false)
     @Column(name = "data")
     @Temporal(TemporalType.DATE)
@@ -56,22 +56,22 @@ public class DespesaVariavel implements Serializable {
     }
 
     public DespesaVariavel(Integer iddespesavariavel) {
-        this.iddespesavariavel = iddespesavariavel;
+        this.id = iddespesavariavel;
     }
 
     public DespesaVariavel(Integer iddespesavariavel, Date data, BigDecimal valor, String descricao) {
-        this.iddespesavariavel = iddespesavariavel;
+        this.id = iddespesavariavel;
         this.data = data;
         this.valor = valor;
         this.descricao = descricao;
     }
 
-    public Integer getIddespesavariavel() {
-        return iddespesavariavel;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIddespesavariavel(Integer iddespesavariavel) {
-        this.iddespesavariavel = iddespesavariavel;
+    public void setId(Integer iddespesavariavel) {
+        this.id = iddespesavariavel;
     }
 
     public Date getData() {
@@ -101,7 +101,7 @@ public class DespesaVariavel implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (iddespesavariavel != null ? iddespesavariavel.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -112,7 +112,7 @@ public class DespesaVariavel implements Serializable {
             return false;
         }
         DespesaVariavel other = (DespesaVariavel) object;
-        if ((this.iddespesavariavel == null && other.iddespesavariavel != null) || (this.iddespesavariavel != null && !this.iddespesavariavel.equals(other.iddespesavariavel))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -120,7 +120,7 @@ public class DespesaVariavel implements Serializable {
 
     @Override
     public String toString() {
-        return "model.DespesaVariavel[iddespesavariavel=" + iddespesavariavel + "]";
+        return "model.DespesaVariavel[iddespesavariavel=" + id + "]";
     }
 
 }

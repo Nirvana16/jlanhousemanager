@@ -37,7 +37,7 @@ public class TipoDespesa implements Serializable {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqTipoDespesa" )
     @Basic(optional = false)
     @Column(name = "idtipodespesa")
-    private Integer idtipodespesa;
+    private Integer id;
     @Basic(optional = false)
     @Column(name = "descricao")
     private String descricao;
@@ -48,20 +48,20 @@ public class TipoDespesa implements Serializable {
     }
 
     public TipoDespesa(Integer idtipodespesa) {
-        this.idtipodespesa = idtipodespesa;
+        this.id = idtipodespesa;
     }
 
     public TipoDespesa(Integer idtipodespesa, String descricao) {
-        this.idtipodespesa = idtipodespesa;
+        this.id = idtipodespesa;
         this.descricao = descricao;
     }
 
-    public Integer getIdtipodespesa() {
-        return idtipodespesa;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdtipodespesa(Integer idtipodespesa) {
-        this.idtipodespesa = idtipodespesa;
+    public void setId(Integer idtipodespesa) {
+        this.id = idtipodespesa;
     }
 
     public String getDescricao() {
@@ -83,7 +83,7 @@ public class TipoDespesa implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idtipodespesa != null ? idtipodespesa.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -94,7 +94,7 @@ public class TipoDespesa implements Serializable {
             return false;
         }
         TipoDespesa other = (TipoDespesa) object;
-        if ((this.idtipodespesa == null && other.idtipodespesa != null) || (this.idtipodespesa != null && !this.idtipodespesa.equals(other.idtipodespesa))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -102,7 +102,7 @@ public class TipoDespesa implements Serializable {
 
     @Override
     public String toString() {
-        return "model.TipoDespesa[idtipodespesa=" + idtipodespesa + "]";
+        return "model.TipoDespesa[idtipodespesa=" + id + "]";
     }
 
 }

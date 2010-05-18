@@ -42,7 +42,7 @@ public class DespesaFixa implements Serializable {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqDespesaFixa" )
     @Basic(optional = false)
     @Column(name = "iddespesafixa")
-    private Integer iddespesafixa;
+    private Integer id;
     @Basic(optional = false)
     @Column(name = "data")
     @Temporal(TemporalType.DATE)
@@ -55,28 +55,28 @@ public class DespesaFixa implements Serializable {
     private int mesreferencia;
     @JoinColumn(name = "idtipodespesa", referencedColumnName = "idtipodespesa")
     @ManyToOne(optional = false)
-    private TipoDespesa idtipodespesa;
+    private TipoDespesa tipodespesa;
 
     public DespesaFixa() {
     }
 
     public DespesaFixa(Integer iddespesafixa) {
-        this.iddespesafixa = iddespesafixa;
+        this.id = iddespesafixa;
     }
 
     public DespesaFixa(Integer iddespesafixa, Date data, BigDecimal valor, int mesreferencia) {
-        this.iddespesafixa = iddespesafixa;
+        this.id = iddespesafixa;
         this.data = data;
         this.valor = valor;
         this.mesreferencia = mesreferencia;
     }
 
-    public Integer getIddespesafixa() {
-        return iddespesafixa;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIddespesafixa(Integer iddespesafixa) {
-        this.iddespesafixa = iddespesafixa;
+    public void setId(Integer iddespesafixa) {
+        this.id = iddespesafixa;
     }
 
     public Date getData() {
@@ -103,18 +103,18 @@ public class DespesaFixa implements Serializable {
         this.mesreferencia = mesreferencia;
     }
 
-    public TipoDespesa getIdtipodespesa() {
-        return idtipodespesa;
+    public TipoDespesa getTipoDespesa() {
+        return tipodespesa;
     }
 
-    public void setIdtipodespesa(TipoDespesa idtipodespesa) {
-        this.idtipodespesa = idtipodespesa;
+    public void setTipoDespesa(TipoDespesa idtipodespesa) {
+        this.tipodespesa = idtipodespesa;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (iddespesafixa != null ? iddespesafixa.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -125,7 +125,7 @@ public class DespesaFixa implements Serializable {
             return false;
         }
         DespesaFixa other = (DespesaFixa) object;
-        if ((this.iddespesafixa == null && other.iddespesafixa != null) || (this.iddespesafixa != null && !this.iddespesafixa.equals(other.iddespesafixa))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -133,7 +133,7 @@ public class DespesaFixa implements Serializable {
 
     @Override
     public String toString() {
-        return "model.DespesaFixa[iddespesafixa=" + iddespesafixa + "]";
+        return "model.DespesaFixa[iddespesafixa=" + id + "]";
     }
 
 }

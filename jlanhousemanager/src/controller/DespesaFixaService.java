@@ -24,7 +24,7 @@ class DespesaFixaService {
     }
 
     void addDespesa(DespesaFixa desp) throws ServiceException {
-        TipoDespesa t = session.pegarTipoDespesa(desp.getIdtipodespesa().getIdtipodespesa());
+        TipoDespesa t = session.pegarTipoDespesa(desp.getTipoDespesa().getId());
         if (t == null)
             throw new ServiceException();
         em.getTransaction().begin();

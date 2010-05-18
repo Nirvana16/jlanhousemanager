@@ -53,7 +53,7 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqCliente" )
     @Basic(optional = false)
     @Column(name = "idcliente")
-    private Integer idcliente;
+    private Integer id;
     @Basic(optional = false)
     @Column(name = "nome")
     private String nome;
@@ -93,11 +93,11 @@ public class Cliente implements Serializable {
     }
 
     public Cliente(Integer idcliente) {
-        this.idcliente = idcliente;
+        this.id = idcliente;
     }
 
     public Cliente(Integer idcliente, String nome, String cpf, Date datanascimento, String endrua, String endbairro, int endnumero, String endcidade, String endestado, String endcep) {
-        this.idcliente = idcliente;
+        this.id = idcliente;
         this.nome = nome;
         this.cpf = cpf;
         this.datanascimento = datanascimento;
@@ -109,13 +109,13 @@ public class Cliente implements Serializable {
         this.endcep = endcep;
     }
 
-    public Integer getIdcliente() {
-        return idcliente;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdcliente(Integer idcliente) {
-        Integer oldIdcliente = this.idcliente;
-        this.idcliente = idcliente;
+    public void setId(Integer idcliente) {
+        Integer oldIdcliente = this.id;
+        this.id = idcliente;
         changeSupport.firePropertyChange("idcliente", oldIdcliente, idcliente);
     }
 
@@ -242,7 +242,7 @@ public class Cliente implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idcliente != null ? idcliente.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -253,7 +253,7 @@ public class Cliente implements Serializable {
             return false;
         }
         Cliente other = (Cliente) object;
-        if ((this.idcliente == null && other.idcliente != null) || (this.idcliente != null && !this.idcliente.equals(other.idcliente))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -261,7 +261,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Cliente[idcliente=" + idcliente + "]";
+        return "model.Cliente[idcliente=" + id + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

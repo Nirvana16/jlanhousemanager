@@ -44,7 +44,7 @@ public class Funcionario implements Serializable {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqFuncionario" )
     @Basic(optional = false)
     @Column(name = "idfuncionario")
-    private Integer idfuncionario;
+    private Integer id;
     @Basic(optional = false)
     @Column(name = "nome")
     private String nome;
@@ -80,11 +80,11 @@ public class Funcionario implements Serializable {
     }
 
     public Funcionario(Integer idfuncionario) {
-        this.idfuncionario = idfuncionario;
+        this.id = idfuncionario;
     }
 
     public Funcionario(Integer idfuncionario, String nome, String cpf, String endrua, String endbairro, int endnumero, String endcidade, String endestado, String endcep) {
-        this.idfuncionario = idfuncionario;
+        this.id = idfuncionario;
         this.nome = nome;
         this.cpf = cpf;
         this.endrua = endrua;
@@ -95,12 +95,12 @@ public class Funcionario implements Serializable {
         this.endcep = endcep;
     }
 
-    public Integer getIdfuncionario() {
-        return idfuncionario;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdfuncionario(Integer idfuncionario) {
-        this.idfuncionario = idfuncionario;
+    public void setId(Integer idfuncionario) {
+        this.id = idfuncionario;
     }
 
     public String getNome() {
@@ -194,7 +194,7 @@ public class Funcionario implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idfuncionario != null ? idfuncionario.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -205,7 +205,7 @@ public class Funcionario implements Serializable {
             return false;
         }
         Funcionario other = (Funcionario) object;
-        if ((this.idfuncionario == null && other.idfuncionario != null) || (this.idfuncionario != null && !this.idfuncionario.equals(other.idfuncionario))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -213,7 +213,7 @@ public class Funcionario implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Funcionario[idfuncionario=" + idfuncionario + "]";
+        return "model.Funcionario[idfuncionario=" + id + "]";
     }
 
 }
