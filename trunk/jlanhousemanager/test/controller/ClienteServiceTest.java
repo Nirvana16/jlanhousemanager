@@ -80,7 +80,7 @@ public class ClienteServiceTest {
         cs.addClient(list.get(1));
 
         Cliente c = list.get(1);
-        int id = c.getIdcliente();
+        int id = c.getId();
 
         Cliente c2 = cs.findClient(id);
 

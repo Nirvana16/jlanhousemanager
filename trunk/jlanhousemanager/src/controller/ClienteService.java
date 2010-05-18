@@ -31,8 +31,14 @@ class ClienteService {
         return em.find(Cliente.class, id);
     }
 
+    public List<Cliente> findClientByName(String name) {
+        TypedQuery<Cliente> tp = em.createNamedQuery("Cliente.findByNome", Cliente.class);
+        tp.setParameter("nome", name);
+        return tp.getResultList();
+    }
+
     public List<Cliente> getClients(){  
-        TypedQuery<Cliente> tp = em.createQuery("SELECT c FROM Cliente c", Cliente.class);
+        TypedQuery<Cliente> tp = em.createNamedQuery("Cliente.findAll", Cliente.class);
         return tp.getResultList();
     }
     

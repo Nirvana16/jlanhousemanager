@@ -37,7 +37,7 @@ public class Produto implements Serializable {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqProduto" )
     @Basic(optional = false)
     @Column(name = "idproduto")
-    private Integer idproduto;
+    private Integer id;
     @Basic(optional = false)
     @Column(name = "descricao")
     private String descricao;
@@ -52,22 +52,22 @@ public class Produto implements Serializable {
     }
 
     public Produto(Integer idproduto) {
-        this.idproduto = idproduto;
+        this.id = idproduto;
     }
 
     public Produto(Integer idproduto, String descricao, int qtdestoque, BigDecimal preco) {
-        this.idproduto = idproduto;
+        this.id = idproduto;
         this.descricao = descricao;
         this.qtdestoque = qtdestoque;
         this.preco = preco;
     }
 
-    public Integer getIdproduto() {
-        return idproduto;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdproduto(Integer idproduto) {
-        this.idproduto = idproduto;
+    public void setId(Integer idproduto) {
+        this.id = idproduto;
     }
 
     public String getDescricao() {
@@ -97,7 +97,7 @@ public class Produto implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idproduto != null ? idproduto.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -108,7 +108,7 @@ public class Produto implements Serializable {
             return false;
         }
         Produto other = (Produto) object;
-        if ((this.idproduto == null && other.idproduto != null) || (this.idproduto != null && !this.idproduto.equals(other.idproduto))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -116,7 +116,7 @@ public class Produto implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Produto[idproduto=" + idproduto + "]";
+        return "model.Produto[idproduto=" + id + "]";
     }
 
 }

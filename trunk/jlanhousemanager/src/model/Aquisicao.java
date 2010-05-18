@@ -41,7 +41,7 @@ public class Aquisicao implements Serializable {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqAquisicao" )
     @Basic(optional = false)
     @Column(name = "idaquisicao")
-    private Integer idaquisicao;
+    private Integer id;
     @Basic(optional = false)
     @Column(name = "data")
     @Temporal(TemporalType.DATE)
@@ -51,27 +51,27 @@ public class Aquisicao implements Serializable {
     private BigDecimal valor;
     @JoinColumn(name = "idfornecedor", referencedColumnName = "idfornecedor")
     @ManyToOne(optional = false)
-    private Fornecedor idfornecedor;
+    private Fornecedor fornecedor;
 
     public Aquisicao() {
     }
 
     public Aquisicao(Integer idaquisicao) {
-        this.idaquisicao = idaquisicao;
+        this.id = idaquisicao;
     }
 
     public Aquisicao(Integer idaquisicao, Date data, BigDecimal valor) {
-        this.idaquisicao = idaquisicao;
+        this.id = idaquisicao;
         this.data = data;
         this.valor = valor;
     }
 
-    public Integer getIdaquisicao() {
-        return idaquisicao;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdaquisicao(Integer idaquisicao) {
-        this.idaquisicao = idaquisicao;
+    public void setId(Integer idaquisicao) {
+        this.id = idaquisicao;
     }
 
     public Date getData() {
@@ -90,18 +90,18 @@ public class Aquisicao implements Serializable {
         this.valor = valor;
     }
 
-    public Fornecedor getIdfornecedor() {
-        return idfornecedor;
+    public Fornecedor getFornecedor() {
+        return fornecedor;
     }
 
-    public void setIdfornecedor(Fornecedor idfornecedor) {
-        this.idfornecedor = idfornecedor;
+    public void setFornecedor(Fornecedor idfornecedor) {
+        this.fornecedor = idfornecedor;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idaquisicao != null ? idaquisicao.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -112,7 +112,7 @@ public class Aquisicao implements Serializable {
             return false;
         }
         Aquisicao other = (Aquisicao) object;
-        if ((this.idaquisicao == null && other.idaquisicao != null) || (this.idaquisicao != null && !this.idaquisicao.equals(other.idaquisicao))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -120,7 +120,7 @@ public class Aquisicao implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Aquisicao[idaquisicao=" + idaquisicao + "]";
+        return "model.Aquisicao[idaquisicao=" + id + "]";
     }
 
 }

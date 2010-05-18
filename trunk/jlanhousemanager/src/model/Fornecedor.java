@@ -42,7 +42,7 @@ public class Fornecedor implements Serializable {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqFornecedor" )
     @Basic(optional = false)
     @Column(name = "idfornecedor")
-    private Integer idfornecedor;
+    private Integer id;
     @Basic(optional = false)
     @Column(name = "nome")
     private String nome;
@@ -75,11 +75,11 @@ public class Fornecedor implements Serializable {
     }
 
     public Fornecedor(Integer idfornecedor) {
-        this.idfornecedor = idfornecedor;
+        this.id = idfornecedor;
     }
 
     public Fornecedor(Integer idfornecedor, String nome, String cpnj, String telefone, String endrua, String endbairro, int endnumero, String endcidade, String endestado, String endcep) {
-        this.idfornecedor = idfornecedor;
+        this.id = idfornecedor;
         this.nome = nome;
         this.cpnj = cpnj;
         this.telefone = telefone;
@@ -91,12 +91,12 @@ public class Fornecedor implements Serializable {
         this.endcep = endcep;
     }
 
-    public Integer getIdfornecedor() {
-        return idfornecedor;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdfornecedor(Integer idfornecedor) {
-        this.idfornecedor = idfornecedor;
+    public void setId(Integer idfornecedor) {
+        this.id = idfornecedor;
     }
 
     public String getNome() {
@@ -174,7 +174,7 @@ public class Fornecedor implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idfornecedor != null ? idfornecedor.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -185,7 +185,7 @@ public class Fornecedor implements Serializable {
             return false;
         }
         Fornecedor other = (Fornecedor) object;
-        if ((this.idfornecedor == null && other.idfornecedor != null) || (this.idfornecedor != null && !this.idfornecedor.equals(other.idfornecedor))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -193,7 +193,7 @@ public class Fornecedor implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Fornecedor[idfornecedor=" + idfornecedor + "]";
+        return "model.Fornecedor[idfornecedor=" + id + "]";
     }
 
 }
