@@ -5,6 +5,8 @@
 
 package model;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -19,6 +21,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 /**
  *
@@ -42,6 +45,8 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "Cliente.findByEndestado", query = "SELECT c FROM Cliente c WHERE c.endestado = :endestado"),
     @NamedQuery(name = "Cliente.findByEndcep", query = "SELECT c FROM Cliente c WHERE c.endcep = :endcep")})
 public class Cliente implements Serializable {
+    @Transient
+    private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
     private static final long serialVersionUID = 1L;
     @Id
     @SequenceGenerator(name="seqCliente", allocationSize=1, sequenceName="cliente_idcliente_seq")
@@ -109,7 +114,9 @@ public class Cliente implements Serializable {
     }
 
     public void setIdcliente(Integer idcliente) {
+        Integer oldIdcliente = this.idcliente;
         this.idcliente = idcliente;
+        changeSupport.firePropertyChange("idcliente", oldIdcliente, idcliente);
     }
 
     public String getNome() {
@@ -117,7 +124,9 @@ public class Cliente implements Serializable {
     }
 
     public void setNome(String nome) {
+        String oldNome = this.nome;
         this.nome = nome;
+        changeSupport.firePropertyChange("nome", oldNome, nome);
     }
 
     public String getCpf() {
@@ -125,7 +134,9 @@ public class Cliente implements Serializable {
     }
 
     public void setCpf(String cpf) {
+        String oldCpf = this.cpf;
         this.cpf = cpf;
+        changeSupport.firePropertyChange("cpf", oldCpf, cpf);
     }
 
     public Date getDatanascimento() {
@@ -133,7 +144,9 @@ public class Cliente implements Serializable {
     }
 
     public void setDatanascimento(Date datanascimento) {
+        Date oldDatanascimento = this.datanascimento;
         this.datanascimento = datanascimento;
+        changeSupport.firePropertyChange("datanascimento", oldDatanascimento, datanascimento);
     }
 
     public String getEmail() {
@@ -141,7 +154,9 @@ public class Cliente implements Serializable {
     }
 
     public void setEmail(String email) {
+        String oldEmail = this.email;
         this.email = email;
+        changeSupport.firePropertyChange("email", oldEmail, email);
     }
 
     public String getTelresidencial() {
@@ -149,7 +164,9 @@ public class Cliente implements Serializable {
     }
 
     public void setTelresidencial(String telresidencial) {
+        String oldTelresidencial = this.telresidencial;
         this.telresidencial = telresidencial;
+        changeSupport.firePropertyChange("telresidencial", oldTelresidencial, telresidencial);
     }
 
     public String getTelcelular() {
@@ -157,7 +174,9 @@ public class Cliente implements Serializable {
     }
 
     public void setTelcelular(String telcelular) {
+        String oldTelcelular = this.telcelular;
         this.telcelular = telcelular;
+        changeSupport.firePropertyChange("telcelular", oldTelcelular, telcelular);
     }
 
     public String getEndrua() {
@@ -165,7 +184,9 @@ public class Cliente implements Serializable {
     }
 
     public void setEndrua(String endrua) {
+        String oldEndrua = this.endrua;
         this.endrua = endrua;
+        changeSupport.firePropertyChange("endrua", oldEndrua, endrua);
     }
 
     public String getEndbairro() {
@@ -173,7 +194,9 @@ public class Cliente implements Serializable {
     }
 
     public void setEndbairro(String endbairro) {
+        String oldEndbairro = this.endbairro;
         this.endbairro = endbairro;
+        changeSupport.firePropertyChange("endbairro", oldEndbairro, endbairro);
     }
 
     public int getEndnumero() {
@@ -181,7 +204,9 @@ public class Cliente implements Serializable {
     }
 
     public void setEndnumero(int endnumero) {
+        int oldEndnumero = this.endnumero;
         this.endnumero = endnumero;
+        changeSupport.firePropertyChange("endnumero", oldEndnumero, endnumero);
     }
 
     public String getEndcidade() {
@@ -189,7 +214,9 @@ public class Cliente implements Serializable {
     }
 
     public void setEndcidade(String endcidade) {
+        String oldEndcidade = this.endcidade;
         this.endcidade = endcidade;
+        changeSupport.firePropertyChange("endcidade", oldEndcidade, endcidade);
     }
 
     public String getEndestado() {
@@ -197,7 +224,9 @@ public class Cliente implements Serializable {
     }
 
     public void setEndestado(String endestado) {
+        String oldEndestado = this.endestado;
         this.endestado = endestado;
+        changeSupport.firePropertyChange("endestado", oldEndestado, endestado);
     }
 
     public String getEndcep() {
@@ -205,7 +234,9 @@ public class Cliente implements Serializable {
     }
 
     public void setEndcep(String endcep) {
+        String oldEndcep = this.endcep;
         this.endcep = endcep;
+        changeSupport.firePropertyChange("endcep", oldEndcep, endcep);
     }
 
     @Override
@@ -231,6 +262,14 @@ public class Cliente implements Serializable {
     @Override
     public String toString() {
         return "model.Cliente[idcliente=" + idcliente + "]";
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        changeSupport.addPropertyChangeListener(listener);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        changeSupport.removePropertyChangeListener(listener);
     }
 
 }
