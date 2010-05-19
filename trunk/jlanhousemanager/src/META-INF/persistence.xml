@@ -10,6 +10,14 @@
     <class>model.Fornecedor</class>
     <class>model.Aquisicao</class>
     <class>model.TipoDespesa</class>
+    <class>model.ItemAquisicao</class>
+    <class>model.Computador</class>
+    <class>model.ExecucaoDeServico</class>
+    <class>model.Conta</class>
+    <class>model.EspecificacaoServico</class>
+    <class>model.CompraDeProduto</class>
+    <class>model.ItemDaConta</class>
+    <class>model.UsoDoComputador</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/dblanhouse"/>
       <property name="javax.persistence.jdbc.password" value="12345"/>
