@@ -9,7 +9,7 @@ package util;
  *
  * @author Danilo
  */
-public class Endereco {
+public class Endereco implements EnderecoI {
 
     private String rua;
     private int num;
@@ -27,12 +27,18 @@ public class Endereco {
         setCep(cep);
     }
 
-
     /**
      * @return the rua
      */
     public String getRua() {
         return rua;
+    }
+
+    /**
+     * @param rua the rua to set
+     */
+    public void setRua(String rua) {
+        this.rua = rua;
     }
 
     /**
@@ -43,10 +49,24 @@ public class Endereco {
     }
 
     /**
+     * @param num the num to set
+     */
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    /**
      * @return the cep
      */
     public String getCep() {
         return cep;
+    }
+
+    /**
+     * @param cep the cep to set
+     */
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     /**
@@ -57,10 +77,24 @@ public class Endereco {
     }
 
     /**
+     * @param bairro the bairro to set
+     */
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    /**
      * @return the cidade
      */
     public String getCidade() {
         return cidade;
+    }
+
+    /**
+     * @param cidade the cidade to set
+     */
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     /**
@@ -71,47 +105,11 @@ public class Endereco {
     }
 
     /**
-     * @param rua the rua to set
-     */
-    private void setRua(String rua) {
-        this.rua = rua;
-    }
-
-    /**
-     * @param num the num to set
-     */
-    private void setNum(int num) {
-        this.num = num;
-    }
-
-    /**
-     * @param cep the cep to set
-     */
-    private void setCep(String cep) {
-        this.cep = cep;
-    }
-
-    /**
-     * @param bairro the bairro to set
-     */
-    private void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    /**
-     * @param cidade the cidade to set
-     */
-    private void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    /**
      * @param estado the estado to set
      */
-    private void setEstado(String estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    
 
 }
