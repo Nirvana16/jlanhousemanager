@@ -15,7 +15,7 @@ package util;
  *
  * @author Danilo
  */
-public class EnderecoPanel extends javax.swing.JPanel {
+public class EnderecoPanel extends javax.swing.JPanel implements EnderecoI {
 
     public Endereco getEndereco(){
         String rua = txtRua.getText();
@@ -174,8 +174,53 @@ public class EnderecoPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtRua;
     // End of variables declaration//GEN-END:variables
 
-    private String getEstado() {
+    public String getEstado() {
+        //TODO - Implementar EnderecoPanel.getEstado
         throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public String getBairro() {
+        return txtBairro.getText();
+    }
+
+    public String getCep() {
+        return txtCEP.getText();
+    }
+
+    public String getCidade() {
+        return txtCidade.getText();
+    }
+
+    public int getNum() {
+        return Integer.parseInt(txtNumero.getText());
+    }
+
+    public String getRua() {
+        return txtRua.getText();
+    }
+
+    public void setBairro(String bairro) {
+        txtBairro.setText(bairro);
+    }
+
+    public void setCep(String cep) {
+        txtCEP.setText(cep);
+    }
+
+    public void setCidade(String cidade) {
+        txtCidade.setText(cidade);
+    }
+
+    public void setEstado(String estado) {
+        //TODO - implementar EnderecoPanel.setEstado
+    }
+
+    public void setNum(int num) {
+        txtNumero.setText(""+num);
+    }
+
+    public void setRua(String rua) {
+        txtRua.setText( rua );
     }
 
 }

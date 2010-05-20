@@ -13,11 +13,11 @@ import model.Cliente;
  *
  * @author Danilo
  */
-class ClienteService {
+public class ClienteService {
 
     private EntityManager em;
 
-    ClienteService( EntityManager em ) {
+    public ClienteService(EntityManager em) {
         this.em = em;
     }
 
@@ -37,9 +37,11 @@ class ClienteService {
         return tp.getResultList();
     }
 
-    public List<Cliente> getClients(){  
-        TypedQuery<Cliente> tp = em.createNamedQuery("Cliente.findAll", Cliente.class);
-        return tp.getResultList();
+    public List<Cliente> getClients() {
+        TypedQuery<Cliente> query = em.createQuery("SELECT e FROM Cliente e",
+                Cliente.class);
+        List<Cliente> emps = query.getResultList();
+
+        return emps;
     }
-    
 }
